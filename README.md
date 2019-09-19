@@ -45,3 +45,9 @@ $ WORK=/tmp/go-build396655427 build-size
 3	internal/race
 1	runtime/internal/math
 ```
+
+To visualize the module sizes, you can use the excellent [space-radar](https://github.com/zz85/space-radar):
+
+![space-radar screenshot](space-radar.jpg)
+
+Just save the output as a text file, and use the "Load DU file" button...
