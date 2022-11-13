@@ -21,10 +21,10 @@ func main() {
 	link := links[0]
 
 	file, err := os.Open(link)
-	defer file.Close()
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
 
 	sizes := make(sizeMap)
 
@@ -47,10 +47,10 @@ func main() {
 		library := fields[1]
 
 		lib, err := os.Open(library)
-		defer lib.Close()
 		if err != nil {
 			panic(err)
 		}
+		defer lib.Close()
 		fi, err := lib.Stat()
 		if err != nil {
 			panic(err)
