@@ -38,6 +38,9 @@ func main() {
 			panic(err)
 		}
 
+		if !strings.HasPrefix(line, "packagefile") {
+			continue
+		}
 		line = strings.Replace(line, "packagefile ", "", 1)
 		fields := strings.Split(strings.TrimRight(line, "\n"), "=")
 		module := fields[0]
