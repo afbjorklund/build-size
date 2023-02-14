@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+from __future__ import print_function
+
 import glob
 import os
 
@@ -15,4 +17,4 @@ for line in open(link, 'r'):
     sizes[module] = os.path.getsize(library)
 
 for item in sorted(sizes, key=sizes.get, reverse=True):
-    print "%d\t%s" % (sizes[item] / 1024, item)
+    print("%d\t%s" % (sizes[item] / 1024, item))
