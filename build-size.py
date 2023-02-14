@@ -6,7 +6,10 @@ import glob
 import os
 
 work = os.environ["WORK"]
-link = glob.glob(work + "/*/importcfg.link")[0]
+try:
+    link = glob.glob(work + "/*/importcfg.link")[0]
+except IndexError:
+    link = work + "/b001/importcfg"  # assume archive
 
 sizes = {}
 for line in open(link, 'r'):

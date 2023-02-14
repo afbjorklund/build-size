@@ -18,6 +18,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	// assume library being built with -buildmode=archive
+	if len(links) == 0 {
+		links = []string{work + "/b001/importcfg"}
+		if _, err := os.Stat(links[0]); err != nil {
+			panic(err)
+		}
+	}
 	link := links[0]
 
 	file, err := os.Open(link)

@@ -46,6 +46,10 @@ $ WORK=/tmp/go-build396655427 build-size
 1	runtime/internal/math
 ```
 
+If building a library instead of a program, then it can be built as an `.a`.
+
+This is done with `-buildmode=archive`, instead of using `-buildmode=exe`.
+
 To visualize the module sizes, you can use the excellent [space-radar](https://github.com/zz85/space-radar):
 
 ![space-radar screenshot](space-radar.jpg)
